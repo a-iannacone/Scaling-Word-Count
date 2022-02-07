@@ -1,0 +1,10 @@
+{% extends "dynamic.html" %}
+{% block body %}
+<form id="form" name="form" method=post enctype=multipart/form-data><center>
+  <input type=file name=file>
+  <input type=submit value=Upload>
+</form>
+<div id="space"></div>
+<div id="space"></div>
+<div id="results"> <a href="/files">Results</a> {{filename}}-{{word_count}} </div>
+{% endblock %}

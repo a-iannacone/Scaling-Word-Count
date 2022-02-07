@@ -1,0 +1,9 @@
+{% extends "dynamic.html" %}
+{% block body %}
+<div id="space"></div>
+{% for your_list_element in your_list %}
+    <p>{{ your_list_element }} </p>
+{% endfor %}
+<div id="space"></div>
+<div id="results"> <a href="/files">Results</a> {{filename}}-{{word_count}} </div>
+{% endblock %}
