@@ -1,0 +1,18 @@
+version: '3'
+services:
+  count-app-back:
+    image: mcr.microsoft.com/oss/bitnami/redis:6.0.8
+    container_name: count-app-back
+    environment:
+      ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+        - "6379:6379"
+
+  count-app-front:
+    build: ./container
+    image: mcr.microsoft.com/azuredocs/azure-vote-front:v1
+    container_name: count-app-front
+    environment:
+      REDIS: count-app-back
+    ports:
+        - "8080:80"
